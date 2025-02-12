@@ -1,0 +1,31 @@
+{
+    "menuHome": "Home",
+    "menuAbout": "About",
+    "menuGalery": "Galery",
+    "menuServices": "Services",
+    "menuReviews": "Reviews",
+    "menuTeam": "Team",
+    "menuPartners": "Partners",
+    "menuMap": "Contacts",
+    "Copyright":"Copyright © 2025 All rights reserved",
+
+    "mainTxt1":"Trade Logistics and Consulting",
+    "mainTxt2":"On time , anytime, anywhere ....",
+
+    "aboutTxt1": "We are a local company offering Foreign Trade and International Logistics services. With the years of experience our professional team has in this field, 'TLC GROUP' consistently stays ahead of its competitors. Our goal is to help our clients expand their businesses through the high-quality services we provide.",
+    "aboutTxt2": "As 'TLC GROUP,' we ensure the purchase of any type of products from foreign markets and their fast and completely secure transportation at competitive prices, based on our clients' inquiries.",
+
+    "service11":"Air Freight Transportation",
+    "service12":"Sea Freight Transportation",
+    "service13":"Road Freight Transportation",
+    "service14":"Rail Freight Transportation",
+
+    "service21":"As TLC Group, we conduct market research and procurement processes for various types of products from international markets at competitive prices. Our goal is to help our clients expand their own businesses through the high-quality service we provide.",
+    "service22":"We also provide transportation and logistics services for the product identified during market research, regardless of its volume or type.",
+    "service23":"During the transportation of your product, you can monitor your shipments via GPS for both security and reliability purposes.",
+    "service24":"As TLC Group, with our consulting services in foreign trade and logistics, you can gain more detailed information about the processes.",
+
+    "count1Txt":"Cargo Delivery",
+    "count2Txt":"Countries"
+
+}
