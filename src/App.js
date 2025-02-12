@@ -401,7 +401,7 @@ function App() {
           <div>
             <div><div><i className="fa-solid fa-phone"></i></div> <a href="tel:+994774500521">+994 77 450 05 21</a></div>
             <div><div><i className="fa-solid fa-envelope"></i></div> <a href="mailto:logistics@tlcgroup.az">logistics@tlcgroup.az</a></div>
-            <div><div><i className="fa-brands fa-instagram"></i></div> <a target='_blank' href="https://www.instagram.com/tlcgroup_az/">@tlcgroup_az</a></div>
+            <div><div><i class="fa-brands fa-square-instagram"></i></div> <a target='_blank' href="https://www.instagram.com/tlcgroup_az/">@tlcgroup_az</a></div>
             <div><div><i className="fa-solid fa-location-dot"></i></div> <span>Chinar Park Business Center , Baku , Azerbaijan</span></div>
           </div>
           <div>

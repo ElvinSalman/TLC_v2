@@ -761,7 +761,7 @@ footer .sfooter ul li a:hover {
     width: 100%;
   }
   #first #mainBlock {
-    height: 100vh;
+    height: 60vh;
   }
   #first #mainBlock #mainTxt {
     display: flex;
@@ -874,6 +874,7 @@ footer .sfooter ul li a:hover {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-right: 30px;
   }
   footer .sfooter ul li {
     margin: 10px 0;
