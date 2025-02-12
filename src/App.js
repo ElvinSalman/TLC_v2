@@ -412,7 +412,7 @@ function App() {
 
       <footer>
         <div className='ffooter'>
-          <h3>TLC Group</h3>
+          <h3>TLC GROUP</h3>
           <p>{t("Copyright")}</p>
         </div>
         <div className='sfooter'>
