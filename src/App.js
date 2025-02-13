@@ -168,9 +168,19 @@ function App() {
       border: 'none',
       borderBottom: '2px solid white',
       outline: 'none',
+      position: 'relative'
     }),
     option: (provided) => ({
       ...provided,
+    }),
+    menu: (provided) => ({
+      ...provided,
+      position: 'relative',
+      zIndex: 999999, // Увеличиваем zIndex для меню
+    }),
+    menuList: (provided) => ({
+      ...provided,
+      zIndex: 999999, // Увеличиваем zIndex для списка опций
     }),
     singleValue: (provided) => ({
       ...provided,
@@ -182,9 +192,9 @@ function App() {
   const CustomOption = (props) => {
     const { data, innerRef, innerProps } = props;
     return (
-      <div ref={innerRef} {...innerProps} style={{ display: 'flex', alignItems: 'center', padding: '10px 20px', color: 'rgba(0, 98, 179, 0.705)', backgroundColor: '#fff' }}>
+      <div ref={innerRef} {...innerProps} style={{ display: 'flex', alignItems: 'center', padding: '10px 20px', color: 'rgba(0, 98, 179, 0.705)', backgroundColor: '#fff', position: 'relative', zIndex: 99999 }}>
         <img src={data.image} alt={data.label} style={{ width: 20, height: 20, marginRight: 10 }} />
-        <span>{data.label}</span>
+        <span style={{ fontSize: 18 }}>{data.label}</span>
       </div>
     );
   };
@@ -196,15 +206,32 @@ function App() {
       {isOpen ?
         <Slide >
           <ul className='animate__backInRight' id='mobileMenu'>
-            <li>
-              <select
+            <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {/* <select
                 onChange={handleLanguageChangeForMobile}
                 value={selectedLanguage}
                 style={{ boxShadow: 'none', fontSize: '18px', padding: "8px 13px ", backgroundColor: 'rgb(0, 35, 64)', color: '#fff', border: 'none', borderBottom: '2px solid white', outline: 'none' }}>
                 <option value='az'>AZE</option>
                 <option value='ru'>RUS</option>
                 <option selected value='en'>ENG</option>
-              </select>
+              </select> */}
+              <div style={{ width: "100%", position: 'relative', zIndex: 9999999 }}>
+                <Select
+                  value={options.find((option) => option.value === selectedLanguage)} // Привязываем выбранное значение
+                  onChange={(selectedOption) => handleLanguageChange(selectedOption.value)} // Обработчик изменения
+                  options={options}
+                  styles={customStyles} // Применяем стили
+                  getOptionLabel={(e) => (
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <img src={e.image} alt={e.label} style={{ width: 20, height: 20, marginRight: 10 }} />
+                      {e.label}
+                    </div>
+                  )}
+                  components={{ Option: CustomOption }} // Используем кастомную опцию для отображения изображения
+                  menuPlacement="top" // Указываем расположение меню
+                  menuPosition="relative" // Позиционируем меню в фиксированном положении
+                />
+              </div>
             </li>
             <li><a onClick={() => { setOpen(false) }} href="#first">{t("menuHome")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#about">{t("menuAbout")}</a></li>
