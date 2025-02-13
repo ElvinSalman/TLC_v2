@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -121,7 +122,7 @@ header ul li a:hover {
   justify-content: center;
   color: rgba(0, 98, 179, 0.705);
   background-color: white;
-  background-image: url("./photos/tlc 2.png");
+  background-image: url("./photos/haqqımızda 2.png");
   background-position: center;
   background-size: cover;
   padding: 80px 0;

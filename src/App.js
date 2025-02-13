@@ -114,11 +114,43 @@ function App() {
       observer.observe(counterRef.current); // Начинаем отслеживать этот элемент
     }
 
+    
+
+
+    const elements = document.querySelectorAll(".wow"); // Находим все элементы с классом wow
+
+    // Настроим Intersection Observer
+    const observer2 = new IntersectionObserver((entries, observer2) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Если элемент видим, добавляем классы для анимации
+          entry.target.classList.add("animate__animated");
+          entry.target.classList.add(entry.target.dataset.animation); // Используем данные атрибута для анимации
+        } else {
+          // Убираем классы анимации, если элемент выходит из видимости
+          entry.target.classList.remove("animate__animated");
+          entry.target.classList.remove(entry.target.dataset.animation);
+        }
+      });
+    }, {
+      threshold: 0.5 // Элемент считается видимым, если 50% его содержимого видно на экране
+    });
+
+    // Отслеживаем каждый элемент
+    elements.forEach(element => {
+      observer2.observe(element);
+    });
+
+    // Убираем observer2 после использования
     return () => {
       if (counterRef.current) {
         observer.unobserve(counterRef.current); // Очищаем наблюдатель
       }
+      elements.forEach(element => {
+        observer2.unobserve(element);
+      });
     };
+
   }, []);
 
   useEffect(() => {
@@ -354,20 +386,20 @@ function App() {
         <div id='servicesMainContainer1'>
           <h1 className='wow animate__animated animate__fadeInUp'>{t("menuServices")}</h1>
           <div className='wow animate__animated animate__fadeInUp' id='lineInServices'></div>
-          <div id='services'>
-            <div className='blockServ wow animate__animated animate__slideInUp'>
+          <div id='services' className='wow' data-animation="animate__pulse">
+            <div className='blockServ'>
               <img src={service1} alt="" />
               <h3>{t("service11")}</h3>
             </div>
-            <div className='blockServ wow animate__animated animate__slideInUp'>
+            <div className='blockServ'>
               <img src={service2} alt="" />
               <h3>{t("service12")}</h3>
             </div>
-            <div className='blockServ wow animate__animated animate__slideInUp'>
+            <div className='blockServ'>
               <img src={service3} alt="" />
               <h3>{t("service13")}</h3>
             </div>
-            <div className='blockServ wow animate__animated animate__slideInUp'>
+            <div className='blockServ'>
               <img src={service4} alt="" />
               <h3>{t("service14")}</h3>
               {/* <p>Эффективные методики лечения, основанные на передовых медицинских исследованиях</p> */}
@@ -380,14 +412,14 @@ function App() {
         <div>
           <p>{t("service21")}</p>
           <div>
-            <i className="fa-solid fa-earth-americas wow animate__animated animate__flip"></i>
+            <i className="fa-solid fa-earth-americas wow" data-animation="animate__flip"></i>
           </div>
 
           <i className="fa-regular fa-circle"></i>
         </div>
         <div>
           <div>
-            <i className="fa-solid fa-truck-ramp-box wow animate__animated animate__fadeInLeft"></i>
+            <i className="fa-solid fa-truck-ramp-box wow" data-animation="animate__shakeX"></i>
           </div>
           <p>{t("service22")}</p>
 
@@ -396,14 +428,14 @@ function App() {
         <div>
           <p>{t("service23")}</p>
           <div>
-            <i className="fa-solid fa-boxes-packing wow animate__animated animate__bounceInUp"></i>
+            <i className="fa-solid fa-boxes-packing wow" data-animation="animate__shakeY"></i>
           </div>
 
           <i className="fa-regular fa-circle"></i>
         </div>
         <div>
           <div>
-            <i className="fa-solid fa-handshake wow animate__animated animate__shakeY"></i>
+            <i className="fa-solid fa-handshake wow" data-animation="animate__shakeY"></i>
           </div>
           <p>{t("service24")}</p>
 
