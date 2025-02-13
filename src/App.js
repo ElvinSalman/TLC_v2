@@ -388,7 +388,9 @@ function App() {
         <div id='servicesMainContainer1'>
           <h1 className='wow animate__animated animate__fadeInUp'>{t("menuServices")}</h1>
           <div className='wow animate__animated animate__fadeInUp' id='lineInServices'></div>
-          <div id='services' className='wow' data-animation="animate__pulse">
+          <div id='services'
+          //  className='wow' data-animation="animate__pulse"
+           >
             <div className='blockServ'>
               <img src={service1} alt="" />
               <h3>{t("service11")}</h3>
