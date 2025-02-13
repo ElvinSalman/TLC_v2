@@ -6,7 +6,7 @@
     "menuReviews": "Reviews",
     "menuTeam": "Team",
     "menuPartners": "Partners",
-    "menuMap": "Contacts",
+    "menuContact": "Contacts",
     "Copyright":"Copyright © 2025 All rights reserved",
 
     "mainTxt1":"TLC GROUP",
@@ -29,6 +29,8 @@
     "count1Txt":"Cargo Delivery",
     "count2Txt":"Countries",
 
+    "addressHead": "Address",
     "address":"\"Chinar Park\" Business Center , Baku , Azerbaijan",
-    "workTime":"Mon - Fri: 09:00 - 18:00"
+    "workTimeHead":"Work Time",
+    "workTime":"Monday - Friday:"
 }

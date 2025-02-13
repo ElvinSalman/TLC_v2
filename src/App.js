@@ -26,6 +26,8 @@ import slider24 from './photos/slider2/Medsol_logo_0-removebg-preview.png';
 import slider25 from './photos/slider2/stp logo.png';
 import slider26 from './photos/slider2/unico logo.png';
 
+import officePhoto from './photos/officeTest.jpg';
+
 import azeFlag from './photos/flags/aze.png';
 import rusFlag from './photos/flags/rus.png';
 import engFlag from './photos/flags/eng.png';
@@ -114,7 +116,7 @@ function App() {
       observer.observe(counterRef.current); // Начинаем отслеживать этот элемент
     }
 
-    
+
 
 
     const elements = document.querySelectorAll(".wow"); // Находим все элементы с классом wow
@@ -301,7 +303,7 @@ function App() {
             <li><a onClick={() => { setOpen(false) }} href="#about">{t("menuAbout")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#servicesDiv">{t("menuServices")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#partnersFirst">{t("menuPartners")}</a></li>
-            <li><a onClick={() => { setOpen(false) }} href="#map">{t("menuMap")}</a></li>
+            <li><a onClick={() => { setOpen(false) }} href="#map">{t("menuContact")}</a></li>
           </ul>
         </Slide>
         : <></>}
@@ -318,7 +320,7 @@ function App() {
           <li><a href="#about">{t("menuAbout")}</a></li>
           <li><a href="#servicesDiv">{t("menuServices")}</a></li>
           <li><a href="#partnersFirst">{t("menuPartners")}</a></li>
-          <li><a href="#map">{t("menuMap")}</a></li>
+          <li><a href="#map">{t("menuContact")}</a></li>
           <li>
             {/* <select
               onChange={handleLanguageChange}
@@ -554,16 +556,11 @@ function App() {
       </div>
 
       <div id='map'>
-        <h1 className='wow animate__animated animate__fadeInUp'>{t("menuMap")}</h1>
+        <h1 className='wow animate__animated animate__fadeInUp'>{t("menuContact")}</h1>
         {/* <div className='wow animate__animated animate__fadeInUp' id='lineInMap'></div> */}
         <div id='elageDiv'>
           <div>
-            <div><div><i className="fa-solid fa-phone"></i></div> <a href="tel:+994774500521">+994 77 450 05 21</a></div>
-            <div><div><i className="fa-solid fa-envelope"></i></div> <a href="mailto:logistics@tlcgroup.az">logistics@tlcgroup.az</a></div>
-            <div><div><i className="fa-brands fa-square-instagram"></i></div> <a target='_blank' href="https://www.instagram.com/tlcgroup_az/">@tlcgroup_az</a></div>
-            <div><div><i className="fa-solid fa-location-dot"></i></div> <span>{t("address")}</span></div>
-            <div><div><i className="fa-solid fa-clock"></i></div> <span>{t("workTime")}</span></div>
-
+            <img src={officePhoto} alt="office" />
           </div>
           <div>
             <iframe className='wow animate__animated animate__fadeInUp' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.735688878328!2d49.85662227548291!3d40.41470575576343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403087fef0e167f9%3A0x2d47dbedc1eea9e7!2sChinar%20Park!5e0!3m2!1sru!2saz!4v1739360673313!5m2!1sru!2saz" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
@@ -573,19 +570,44 @@ function App() {
 
       <footer>
         <div className='ffooter'>
+
+          <div>
+            <div>
+              <i className="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <h3>{t("addressHead")}</h3>
+              <p>{t("address")}</p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <i className="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <h3>{t("menuContact")}</h3>
+              <p><a href="mailto:logistics@tlcgroup.az">logistics@tlcgroup.az</a></p>
+              <p><a href="tel:+994774500521">+994 77 450 05 21</a></p>
+              <p><a target='_blank' href="https://www.instagram.com/tlcgroup_az/">@tlcgroup_az</a></p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <i className="fa-solid fa-clock"></i>
+            </div>
+            <div>
+              <h3>{t("workTimeHead")}</h3>
+              <p>{t("workTime")}</p>
+              <p>09:00 - 18:00</p>
+            </div>
+          </div>
+
+        </div>
+        <div className='fsfooter'>
           <h3>TLC GROUP</h3>
           <p>{t("Copyright")}</p>
-        </div>
-        <div className='sfooter'>
-          <ul>
-            <li><a href="#first">{t("menuHome")}</a></li>
-            <li><a href="#about">{t("menuAbout")}</a></li>
-            <li><a href="#servicesDiv">{t("menuServices")}</a></li>
-          </ul>
-          <ul>
-            <li><a href="#partnersFirst">{t("menuPartners")}</a></li>
-            <li><a href="#map">{t("menuMap")}</a></li>
-          </ul>
         </div>
       </footer>
 

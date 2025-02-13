@@ -425,27 +425,11 @@ header ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 0;
 }
-#map #elageDiv > div:nth-child(1) > div {
-  margin-bottom: 50px;
-  margin-left: 30px;
-  display: flex;
-  align-items: center;
-}
-#map #elageDiv > div:nth-child(1) > div div {
-  width: 17%;
-}
-#map #elageDiv > div:nth-child(1) > div div i {
-  color: rgba(0, 98, 179, 0.705);
-  font-size: 40px;
-  margin-right: 15px;
-}
-#map #elageDiv > div:nth-child(1) > div a {
-  text-decoration: none;
-  color: rgba(0, 98, 179, 0.705);
-}
-#map #elageDiv > div:nth-child(1) > div span {
-  color: rgba(0, 98, 179, 0.705);
+#map #elageDiv > div:nth-child(1) img {
+  width: 100%;
+  height: 450px;
 }
 #map #elageDiv > div:nth-child(2) {
   width: 64%;
@@ -461,34 +445,59 @@ footer {
   background-color: rgba(0, 98, 179, 0.705);
   padding: 20px 40px;
   color: #fff;
+}
+footer > div {
+  padding: 10px 0;
+}
+footer .ffooter {
+  border-bottom: 1px solid white;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-footer .ffooter p {
-  margin-top: 10px;
-  font-size: 12px;
-}
-footer .sfooter {
+footer .ffooter > div {
+  width: 30%;
+  margin: 0;
   display: flex;
   flex-direction: row;
-  width: 60%;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
 }
-footer .sfooter ul {
-  width: 50%;
-  list-style: none;
+footer .ffooter > div > div:nth-child(1) {
+  height: 120px;
+  width: 120px;
+  background-color: rgba(17, 102, 171, 0.705);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom: 0;
+  margin-right: 15px;
 }
-footer .sfooter ul li a {
-  color: #fff;
+footer .ffooter > div > div:nth-child(1) i {
+  font-size: 70px;
+}
+footer .ffooter > div > div:nth-child(2) {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+footer .ffooter > div > div:nth-child(2) h3 {
+  margin-bottom: 10px;
+}
+footer .ffooter > div > div:nth-child(2) p {
+  margin-bottom: 7px;
+  font-size: 16px;
+}
+footer .ffooter > div > div:nth-child(2) p a {
   text-decoration: none;
-  transition: 0.3s;
+  color: #fff;
 }
-footer .sfooter ul li a:hover {
-  color: #e0e0e0;
+footer .fsfooter p {
+  margin-top: 10px;
+  font-size: 12px;
 }
 
 #contact {
@@ -724,9 +733,11 @@ footer .sfooter ul li a:hover {
   }
   #map #elageDiv > div:nth-child(1) {
     width: 100%;
+    margin-bottom: 20px;
   }
-  #map #elageDiv > div:nth-child(1) > div div {
-    width: 10%;
+  #map #elageDiv > div:nth-child(1) img {
+    width: 100%;
+    height: auto;
   }
   #map #elageDiv > div:nth-child(2) {
     width: 100%;
@@ -738,39 +749,19 @@ footer .sfooter ul li a:hover {
   .partners .partnerDiv img {
     width: 70%;
   }
-  footer {
-    align-items: flex-start;
+  footer .ffooter {
     flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
   }
-  footer .ffooter p {
-    margin-top: 10px;
-    font-size: 12px;
-  }
-  footer .sfooter {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    justify-content: space-around;
-  }
-  footer .sfooter ul {
-    width: 50%;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  footer .ffooter > div {
+    width: 100%;
     justify-content: flex-start;
+    flex-direction: row;
+    margin: 15px 0;
   }
-  footer .sfooter ul li {
-    margin: 10px 0;
-  }
-  footer .sfooter ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  footer .sfooter ul li a:hover {
-    color: #c7c6c6;
+  footer .ffooter > div > div:nth-child(1) {
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 660px) {
@@ -858,9 +849,11 @@ footer .sfooter ul li a:hover {
   }
   #map #elageDiv > div:nth-child(1) {
     width: 100%;
+    margin-bottom: 20px;
   }
-  #map #elageDiv > div:nth-child(1) > div div {
-    width: 20%;
+  #map #elageDiv > div:nth-child(1) img {
+    width: 100%;
+    height: auto;
   }
   #map #elageDiv > div:nth-child(2) {
     width: 100%;
@@ -872,40 +865,19 @@ footer .sfooter ul li a:hover {
   .partners .partnerDiv img {
     width: 65%;
   }
-  footer {
-    align-items: flex-start;
+  footer .ffooter {
     flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  footer .ffooter > div {
     width: 100%;
-  }
-  footer .ffooter p {
-    margin-top: 10px;
-    font-size: 12px;
-  }
-  footer .sfooter {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    justify-content: space-around;
-  }
-  footer .sfooter ul {
-    width: 50%;
-    list-style: none;
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: flex-start;
-    margin-right: 30px;
-  }
-  footer .sfooter ul li {
+    align-items: flex-start;
     margin: 10px 0;
   }
-  footer .sfooter ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  footer .sfooter ul li a:hover {
-    color: #c7c6c6;
+  footer .ffooter > div > div:nth-child(1) {
+    margin-bottom: 10px;
   }
 }/*# sourceMappingURL=App.css.map */

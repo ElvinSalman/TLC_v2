@@ -6,7 +6,7 @@
     "menuReviews": "Missiyamız",
     "menuTeam": "Komandamız",
     "menuPartners": "Tərəfdaşlarımız",
-    "menuMap": "Əlaqə",
+    "menuContact": "Əlaqə",
     "Copyright": "Müəllif hüquqları © 2025 Bütün hüquqlar qorunur",
 
     "mainTxt1":"TLC GROUP",
@@ -29,6 +29,8 @@
     "count1Txt":"Yük çatdırılması",
     "count2Txt":"Ölkələr",
 
+    "addressHead": "Ünvan",
     "address":"\"Çinar Park\" Biznes Mərkəzi, Bakı, Azərbaycan",
-    "workTime":"Bazar ertəsi - Cümə: 09:00 - 18:00"
+    "workTimeHead":"İş vaxtı",
+    "workTime":"Bazar ertəsi - Cümə:"
 }

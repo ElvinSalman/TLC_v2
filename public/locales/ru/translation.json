@@ -6,7 +6,7 @@
     "menuReviews": "Отзывы",
     "menuTeam": "Команда",
     "menuPartners": "Партнеры",
-    "menuMap": "Контакты",
+    "menuContact": "Контакты",
     "Copyright":"Авторские права © 2025 Все права защищены",
 
     "mainTxt1":"TLC GROUP",
@@ -28,7 +28,9 @@
 
     "count1Txt":"Доставка грузов",
     "count2Txt":"Стран",
-    
+
+    "addressHead": "Адрес",
     "address":"Бизнес-центр \"Чинар Парк\", Баку, Азербайджан",
-    "workTime":"Пн - Пт: 09:00 - 18:00"
+    "workTimeHead":"Рабочее время",
+    "workTime":"Понедельник - Пятница:"
 }
