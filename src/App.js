@@ -160,6 +160,35 @@ function App() {
 
   // Стили для компонента
   const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      fontSize: '16px',
+      backgroundColor: 'transparent',
+      color: '#fff',
+      border: 'none',
+      borderBottom: '2px solid white',
+      outline: 'none', // Убираем outline
+      boxShadow: state.isFocused ? 'none' : 'none', // Убираем тень при фокусе
+      position: 'relative',
+      cursor: 'pointer',
+    }),
+    option: (provided) => ({
+      ...provided,
+    }),
+    menu: (provided) => ({
+      ...provided,
+    }),
+    menuList: (provided) => ({
+      ...provided,
+      zIndex: 999999, // Увеличиваем zIndex для списка опций
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: '#fff', // Цвет текста для выбранного значения
+    }),
+  };
+
+  const customStyles2 = {
     control: (provided) => ({
       ...provided,
       fontSize: '16px',
@@ -176,7 +205,7 @@ function App() {
     menu: (provided) => ({
       ...provided,
       position: 'relative',
-      zIndex: 999999, // Увеличиваем zIndex для меню
+      zIndex: 999999, // Увеличиваем zIndex для списка опций
     }),
     menuList: (provided) => ({
       ...provided,
@@ -192,7 +221,7 @@ function App() {
   const CustomOption = (props) => {
     const { data, innerRef, innerProps } = props;
     return (
-      <div ref={innerRef} {...innerProps} style={{ display: 'flex', alignItems: 'center', padding: '10px 20px', color: 'rgba(0, 98, 179, 0.705)', backgroundColor: '#fff', position: 'relative', zIndex: 99999 }}>
+      <div className='menuLi' ref={innerRef} {...innerProps} style={{}}>
         <img src={data.image} alt={data.label} style={{ width: 20, height: 20, marginRight: 10 }} />
         <span style={{ fontSize: 18 }}>{data.label}</span>
       </div>
@@ -220,7 +249,7 @@ function App() {
                   value={options.find((option) => option.value === selectedLanguage)} // Привязываем выбранное значение
                   onChange={(selectedOption) => handleLanguageChange(selectedOption.value)} // Обработчик изменения
                   options={options}
-                  styles={customStyles} // Применяем стили
+                  styles={customStyles2} // Применяем стили
                   getOptionLabel={(e) => (
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                       <img src={e.image} alt={e.label} style={{ width: 20, height: 20, marginRight: 10 }} />

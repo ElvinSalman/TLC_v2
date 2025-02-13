@@ -526,6 +526,20 @@ footer .sfooter ul li a:hover {
   z-index: 9999999 !important;
 }
 
+.menuLi {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: rgba(0, 98, 179, 0.705);
+  background-color: #fff;
+  position: relative;
+  z-index: 99999;
+  cursor: pointer;
+}
+.menuLi:hover {
+  background-color: rgba(224, 224, 224, 0.63);
+}
+
 #mobileMenu {
   position: fixed;
   top: 70px;
