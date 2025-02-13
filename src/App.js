@@ -36,6 +36,7 @@ import { Fade, Zoom, Slide } from 'react-awesome-reveal';
 import Hamburger from 'hamburger-react'
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import Select from 'react-select';
 
 
 
@@ -71,8 +72,8 @@ function App() {
   }
 
   const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default value
-  const handleLanguageChange = (event) => {
-    const value = event.target.value;
+  const handleLanguageChange = (value) => {
+    // const value = event.target.value;
     changeLanguage(value);
 
     setSelectedLanguage(value);  // Update the selected language
@@ -137,6 +138,35 @@ function App() {
   }, [isInView]);
 
 
+  const options = [
+    { value: 'az', label: 'AZE' },
+    { value: 'ru', label: 'RUS' },
+    { value: 'en', label: 'ENG' },
+  ];
+  
+  // Стили для компонента
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      fontSize: '16px',
+      backgroundColor: 'transparent',
+      color: '#fff',
+      border: 'none',
+      borderBottom: '2px solid white',
+      outline: 'none',
+    }),
+    option: (provided) => ({
+      ...provided,
+      color: 'rgba(0, 98, 179, 0.705)',
+      backgroundColor: '#fff',
+      padding: '10px 20px', // добавим паддинг
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: '#fff', // Цвет текста для выбранного значения
+    }),
+  };
+
   return (
 
     <div className="App">
@@ -177,14 +207,20 @@ function App() {
           <li><a href="#partnersFirst">{t("menuPartners")}</a></li>
           <li><a href="#map">{t("menuMap")}</a></li>
           <li>
-            <select
+            {/* <select
               onChange={handleLanguageChange}
               value={selectedLanguage}
               style={{ fontSize: '16px', padding: "8px 13px ", backgroundColor: 'transparent', color: '#fff', border: 'none', borderBottom: '2px solid white', outline: 'none' }}>
-              <option style={{ color: '#fff', padding: '10px', backgroundColor: 'rgba(0, 98, 179, 0.705)' }} value='az'>AZE</option>
+              <option style={{ color: '#fff', backgroundColor: 'rgba(0, 98, 179, 0.705)' }} value='az'>AZE</option>
               <option style={{ color: '#fff', backgroundColor: 'rgba(0, 98, 179, 0.705)' }} value='ru'>RUS</option>
               <option style={{ color: '#fff', backgroundColor: 'rgba(0, 98, 179, 0.705)' }} selected value='en'>ENG</option>
-            </select>
+            </select> */}
+            <Select
+              value={options.find((option) => option.value === selectedLanguage)} // Привязываем выбранное значение
+              onChange={(selectedOption) => handleLanguageChange(selectedOption.value)} // Обработчик изменения
+              options={options}
+              styles={customStyles} // Применяем стили
+            />
           </li>
         </ul>
         <div id='hamMenu'>
