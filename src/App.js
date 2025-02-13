@@ -86,6 +86,13 @@ function App() {
     setSelectedLanguage(value);  // Update the selected language
   };
 
+  const handleLanguageChangeForMobile = (event) => {
+    const value = event.target.value;
+    changeLanguage(value);
+
+    setSelectedLanguage(value);  // Update the selected language
+  };
+
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(0);
   const [isInView, setIsInView] = useState(false);
@@ -191,7 +198,7 @@ function App() {
           <ul className='animate__backInRight' id='mobileMenu'>
             <li>
               <select
-                onChange={handleLanguageChange}
+                onChange={handleLanguageChangeForMobile}
                 value={selectedLanguage}
                 style={{ boxShadow: 'none', fontSize: '18px', padding: "8px 13px ", backgroundColor: 'rgb(0, 35, 64)', color: '#fff', border: 'none', borderBottom: '2px solid white', outline: 'none' }}>
                 <option value='az'>AZE</option>
