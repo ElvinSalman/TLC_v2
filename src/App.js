@@ -189,15 +189,17 @@ function App() {
   };
 
   const customStyles2 = {
-    control: (provided) => ({
+    control: (provided, state) => ({
       ...provided,
       fontSize: '16px',
       backgroundColor: 'transparent',
       color: '#fff',
       border: 'none',
       borderBottom: '2px solid white',
-      outline: 'none',
-      position: 'relative'
+      outline: 'none', // Убираем outline
+      boxShadow: state.isFocused ? 'none' : 'none', // Убираем тень при фокусе
+      position: 'relative',
+      cursor: 'pointer',
     }),
     option: (provided) => ({
       ...provided,
@@ -244,12 +246,13 @@ function App() {
                 <option value='ru'>RUS</option>
                 <option selected value='en'>ENG</option>
               </select> */}
-              <div style={{ width: "100%", position: 'relative', zIndex: 9999999 }}>
+              <div style={{ width: "65%", position: 'relative', zIndex: 9999999 }}>
                 <Select
                   value={options.find((option) => option.value === selectedLanguage)} // Привязываем выбранное значение
                   onChange={(selectedOption) => handleLanguageChange(selectedOption.value)} // Обработчик изменения
                   options={options}
                   styles={customStyles2} // Применяем стили
+                  isSearchable={false}
                   getOptionLabel={(e) => (
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                       <img src={e.image} alt={e.label} style={{ width: 20, height: 20, marginRight: 10 }} />
@@ -298,6 +301,7 @@ function App() {
               onChange={(selectedOption) => handleLanguageChange(selectedOption.value)} // Обработчик изменения
               options={options}
               styles={customStyles} // Применяем стили
+              isSearchable={false}
               getOptionLabel={(e) => (
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <img src={e.image} alt={e.label} style={{ width: 20, height: 20, marginRight: 10 }} />
