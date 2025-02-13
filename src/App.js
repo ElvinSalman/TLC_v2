@@ -264,6 +264,16 @@ function App() {
     );
   };
 
+  const [activeService, setActiveService] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setActiveService(index);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveService(null);
+  };
+
   return (
 
     <div className="App">
@@ -390,23 +400,58 @@ function App() {
           <div className='wow animate__animated animate__fadeInUp' id='lineInServices'></div>
           <div id='services'
           //  className='wow' data-animation="animate__pulse"
-           >
-            <div className='blockServ'>
+          >
+            <div
+              className={`blockServ ${activeService === 1 ? 'active' : ''}`}
+              onMouseEnter={() => handleMouseEnter(1)}
+              onMouseLeave={handleMouseLeave}
+            >
               <img src={service1} alt="" />
               <h3>{t("service11")}</h3>
+              {activeService === 1 && (
+                <div className='serviceDetails'>
+                  <p>Текст, который открывается при наведении.</p>
+                </div>
+              )}
             </div>
-            <div className='blockServ'>
+            <div
+              className={`blockServ ${activeService === 2 ? 'active' : ''}`}
+              onMouseEnter={() => handleMouseEnter(2)}
+              onMouseLeave={handleMouseLeave}
+            >
               <img src={service2} alt="" />
               <h3>{t("service12")}</h3>
+              {activeService === 2 && (
+                <div className='serviceDetails'>
+                  <p>Текст, который открывается при наведении.</p>
+                </div>
+              )}
             </div>
-            <div className='blockServ'>
+            <div
+              className={`blockServ ${activeService === 3 ? 'active' : ''}`}
+              onMouseEnter={() => handleMouseEnter(3)}
+              onMouseLeave={handleMouseLeave}
+            >
               <img src={service3} alt="" />
               <h3>{t("service13")}</h3>
+              {activeService === 3 && (
+                <div className='serviceDetails'>
+                  <p>Текст, который открывается при наведении.</p>
+                </div>
+              )}
             </div>
-            <div className='blockServ'>
+            <div
+              className={`blockServ ${activeService === 4 ? 'active' : ''}`}
+              onMouseEnter={() => handleMouseEnter(4)}
+              onMouseLeave={handleMouseLeave}
+            >
               <img src={service4} alt="" />
               <h3>{t("service14")}</h3>
-              {/* <p>Эффективные методики лечения, основанные на передовых медицинских исследованиях</p> */}
+              {activeService === 4 && (
+                <div className='serviceDetails'>
+                  <p>Текст, который открывается при наведении.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
