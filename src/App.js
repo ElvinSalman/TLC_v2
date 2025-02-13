@@ -26,6 +26,11 @@ import slider24 from './photos/slider2/Medsol_logo_0-removebg-preview.png';
 import slider25 from './photos/slider2/stp logo.png';
 import slider26 from './photos/slider2/unico logo.png';
 
+import azeFlag from './photos/flags/aze.png';
+import rusFlag from './photos/flags/rus.png';
+import engFlag from './photos/flags/eng.png';
+
+
 
 
 
@@ -60,6 +65,8 @@ const responsiveThird = {
     items: 3
   }
 };
+
+
 
 
 function App() {
@@ -139,11 +146,11 @@ function App() {
 
 
   const options = [
-    { value: 'az', label: 'AZE' },
-    { value: 'ru', label: 'RUS' },
-    { value: 'en', label: 'ENG' },
+    { value: 'az', label: 'AZE', image: azeFlag },
+    { value: 'ru', label: 'RUS', image: rusFlag },
+    { value: 'en', label: 'ENG', image: engFlag },
   ];
-  
+
   // Стили для компонента
   const customStyles = {
     control: (provided) => ({
@@ -157,14 +164,22 @@ function App() {
     }),
     option: (provided) => ({
       ...provided,
-      color: 'rgba(0, 98, 179, 0.705)',
-      backgroundColor: '#fff',
-      padding: '10px 20px', // добавим паддинг
     }),
     singleValue: (provided) => ({
       ...provided,
       color: '#fff', // Цвет текста для выбранного значения
     }),
+  };
+
+  // Кастомный рендеринг опции с изображением
+  const CustomOption = (props) => {
+    const { data, innerRef, innerProps } = props;
+    return (
+      <div ref={innerRef} {...innerProps} style={{ display: 'flex', alignItems: 'center', padding: '10px 20px', color: 'rgba(0, 98, 179, 0.705)', backgroundColor: '#fff' }}>
+        <img src={data.image} alt={data.label} style={{ width: 20, height: 20, marginRight: 10 }} />
+        <span>{data.label}</span>
+      </div>
+    );
   };
 
   return (
@@ -220,6 +235,13 @@ function App() {
               onChange={(selectedOption) => handleLanguageChange(selectedOption.value)} // Обработчик изменения
               options={options}
               styles={customStyles} // Применяем стили
+              getOptionLabel={(e) => (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={e.image} alt={e.label} style={{ width: 20, height: 20, marginRight: 10 }} />
+                  {e.label}
+                </div>
+              )}
+              components={{ Option: CustomOption }} // Используем кастомную опцию для отображения изображения
             />
           </li>
         </ul>
@@ -294,7 +316,7 @@ function App() {
             <i className="fa-solid fa-earth-americas wow animate__animated animate__flip"></i>
           </div>
 
-          <i class="fa-regular fa-circle"></i>
+          <i className="fa-regular fa-circle"></i>
         </div>
         <div>
           <div>
@@ -302,7 +324,7 @@ function App() {
           </div>
           <p>{t("service22")}</p>
 
-          <i class="fa-regular fa-circle"></i>
+          <i className="fa-regular fa-circle"></i>
         </div>
         <div>
           <p>{t("service23")}</p>
@@ -310,7 +332,7 @@ function App() {
             <i className="fa-solid fa-boxes-packing wow animate__animated animate__bounceInUp"></i>
           </div>
 
-          <i class="fa-regular fa-circle"></i>
+          <i className="fa-regular fa-circle"></i>
         </div>
         <div>
           <div>
@@ -318,7 +340,7 @@ function App() {
           </div>
           <p>{t("service24")}</p>
 
-          <i class="fa-regular fa-circle"></i>
+          <i className="fa-regular fa-circle"></i>
         </div>
       </div>
 
@@ -439,9 +461,9 @@ function App() {
           <div>
             <div><div><i className="fa-solid fa-phone"></i></div> <a href="tel:+994774500521">+994 77 450 05 21</a></div>
             <div><div><i className="fa-solid fa-envelope"></i></div> <a href="mailto:logistics@tlcgroup.az">logistics@tlcgroup.az</a></div>
-            <div><div><i class="fa-brands fa-square-instagram"></i></div> <a target='_blank' href="https://www.instagram.com/tlcgroup_az/">@tlcgroup_az</a></div>
+            <div><div><i className="fa-brands fa-square-instagram"></i></div> <a target='_blank' href="https://www.instagram.com/tlcgroup_az/">@tlcgroup_az</a></div>
             <div><div><i className="fa-solid fa-location-dot"></i></div> <span>{t("address")}</span></div>
-            <div><div><i class="fa-solid fa-clock"></i></div> <span>{t("workTime")}</span></div>
+            <div><div><i className="fa-solid fa-clock"></i></div> <span>{t("workTime")}</span></div>
 
           </div>
           <div>
