@@ -1,4 +1,4 @@
-import logo from './photos/logo (2).png';
+import logo from './photos/mainLogo.png';
 import main from './photos/mainLog1.jpeg';
 import about from './photos/aboutPhoto2.jpg';
 import service1 from './photos/service1.jpg';
@@ -149,9 +149,9 @@ function App() {
                 onChange={handleLanguageChange}
                 value={selectedLanguage}
                 style={{ boxShadow: 'none', fontSize: '18px', padding: "8px 13px ", backgroundColor: 'rgb(0, 35, 64)', color: '#fff', border: 'none', borderBottom: '2px solid white', outline: 'none' }}>
-                <option value='az'>AZ</option>
-                <option value='ru'>RU</option>
-                <option selected value='en'>EN</option>
+                <option value='az'>AZE</option>
+                <option value='ru'>RUS</option>
+                <option selected value='en'>ENG</option>
               </select>
             </li>
             <li><a onClick={() => { setOpen(false) }} href="#first">{t("menuHome")}</a></li>
@@ -166,8 +166,9 @@ function App() {
 
       <header>
         <div className='logo'>
-          <img src={logo} alt="logo" />
-          <p>TLC GROUP</p>
+          <a href="#first">
+            <img src={logo} alt="logo" />
+          </a>
         </div>
         <ul>
           <li><a href="#first">{t("menuHome")}</a></li>
@@ -180,9 +181,9 @@ function App() {
               onChange={handleLanguageChange}
               value={selectedLanguage}
               style={{ fontSize: '16px', padding: "8px 13px ", backgroundColor: 'transparent', color: '#fff', border: 'none', borderBottom: '2px solid white', outline: 'none' }}>
-              <option style={{ color: 'black' }} value='az'>AZ</option>
-              <option style={{ color: 'black' }} value='ru'>RU</option>
-              <option style={{ color: 'black' }} selected value='en'>EN</option>
+              <option style={{ color: '#fff', padding: '10px', backgroundColor: 'rgba(0, 98, 179, 0.705)' }} value='az'>AZE</option>
+              <option style={{ color: '#fff', backgroundColor: 'rgba(0, 98, 179, 0.705)' }} value='ru'>RUS</option>
+              <option style={{ color: '#fff', backgroundColor: 'rgba(0, 98, 179, 0.705)' }} selected value='en'>ENG</option>
             </select>
           </li>
         </ul>
@@ -199,6 +200,7 @@ function App() {
             <div className='cover'></div>
             <div id='mainTxt'>
               <h1>{t("mainTxt1")}</h1>
+              <h3>{t("mainTxt12")}</h3>
               <div></div>
               <p>{t("mainTxt2")}</p>
             </div>
@@ -221,7 +223,7 @@ function App() {
         </div>
       </div>
 
-   
+
 
       <div id='servicesDiv'>
         <div id='servicesMainContainer1'>
@@ -424,8 +426,8 @@ function App() {
             <li><a href="#servicesDiv">{t("menuServices")}</a></li>
           </ul>
           <ul>
-          <li><a href="#partnersFirst">{t("menuPartners")}</a></li>
-          <li><a href="#map">{t("menuMap")}</a></li>
+            <li><a href="#partnersFirst">{t("menuPartners")}</a></li>
+            <li><a href="#map">{t("menuMap")}</a></li>
           </ul>
         </div>
       </footer>
