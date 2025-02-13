@@ -428,7 +428,7 @@ function App() {
         <div>
           <p>{t("service23")}</p>
           <div>
-            <i className="fa-solid fa-boxes-packing wow" data-animation="animate__shakeY"></i>
+            <i className="fa-solid fa-boxes-packing wow" data-animation="animate__wobble"></i>
           </div>
 
           <i className="fa-regular fa-circle"></i>
