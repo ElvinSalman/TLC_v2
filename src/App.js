@@ -275,14 +275,36 @@ function App() {
     );
   };
 
-  const [activeService, setActiveService] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalText, setModalText] = useState("");
 
-  const handleMouseEnter = (index) => {
-    setActiveService(index);
+  
+
+  const openModal = (serviceId) => {
+    let serviceText = "";
+    switch (serviceId) {
+      case 1:
+        serviceText = t("service11Txt");
+        break;
+      case 2:
+        serviceText = t("service12Txt");
+        break;
+      case 3:
+        serviceText = t("service13Txt");
+        break;
+      case 4:
+        serviceText = t("service14Txt");
+        break;
+      default:
+        break;
+    }
+    setModalText(serviceText);
+    setModalOpen(true);
   };
 
-  const handleMouseLeave = () => {
-    setActiveService(null);
+  const closeModal = () => {
+    setModalOpen(false);
+    setModalText("");
   };
 
   return (
@@ -406,57 +428,45 @@ function App() {
           //  className='wow' data-animation="animate__pulse"
           >
             <div
-              className={`blockServ ${activeService === 1 ? 'active' : ''}`}
-              onMouseEnter={() => handleMouseEnter(1)}
-              onMouseLeave={handleMouseLeave}
+              className={`blockServ`}
             >
               <img src={service1} alt="" />
               <h3>{t("service11")}</h3>
-              {activeService === 1 && (
-                <div className='serviceDetails'>
-                  <p>Текст, который открывается при наведении.</p>
-                </div>
-              )}
+              <button onClick={() => openModal(1)}>{t("moreInfoBtn")}</button>
             </div>
             <div
-              className={`blockServ ${activeService === 2 ? 'active' : ''}`}
-              onMouseEnter={() => handleMouseEnter(2)}
-              onMouseLeave={handleMouseLeave}
+              className={`blockServ`}
             >
               <img src={service2} alt="" />
               <h3>{t("service12")}</h3>
-              {activeService === 2 && (
-                <div className='serviceDetails'>
-                  <p>Текст, который открывается при наведении.</p>
-                </div>
-              )}
+              <button onClick={() => openModal(2)}>{t("moreInfoBtn")}</button>
             </div>
             <div
-              className={`blockServ ${activeService === 3 ? 'active' : ''}`}
-              onMouseEnter={() => handleMouseEnter(3)}
-              onMouseLeave={handleMouseLeave}
+              className={`blockServ`}
             >
               <img src={service3} alt="" />
               <h3>{t("service13")}</h3>
-              {activeService === 3 && (
-                <div className='serviceDetails'>
-                  <p>Текст, который открывается при наведении.</p>
-                </div>
-              )}
+              <button onClick={() => openModal(3)}>{t("moreInfoBtn")}</button>
             </div>
             <div
-              className={`blockServ ${activeService === 4 ? 'active' : ''}`}
-              onMouseEnter={() => handleMouseEnter(4)}
-              onMouseLeave={handleMouseLeave}
+              className={`blockServ`}
             >
               <img src={service4} alt="" />
               <h3>{t("service14")}</h3>
-              {activeService === 4 && (
-                <div className='serviceDetails'>
-                  <p>Текст, который открывается при наведении.</p>
-                </div>
-              )}
+              <button onClick={() => openModal(4)}>{t("moreInfoBtn")}</button>
             </div>
+
+            {/* Модальное окно */}
+            {modalOpen && (
+              <div className="modalOverlay">
+                <div className="modalContent">
+                  <h2>{t("moreInfoBtn")}</h2>
+                  <p>{modalText}</p>
+                  <button onClick={closeModal}>{t("closeInfoBtn")}</button>
+                </div>
+              </div>
+            )}
+
           </div>
         </div>
       </div>
