@@ -32,6 +32,10 @@ import azeFlag from './photos/flags/aze.png';
 import rusFlag from './photos/flags/rus.png';
 import engFlag from './photos/flags/eng.png';
 
+import ref1 from './photos/refs/changan.jpeg';
+import ref2 from './photos/refs/LynkCo.jpeg';
+import ref3 from './photos/refs/leapmotors.jpeg';
+
 
 
 
@@ -140,9 +144,9 @@ function App() {
     }, {
       threshold: 0.5 // Элемент считается видимым, если 50% его содержимого видно на экране
     });
-    
-    
-    
+
+
+
 
     // Отслеживаем каждый элемент
     elements.forEach(element => {
@@ -289,14 +293,6 @@ function App() {
         <Slide >
           <ul className='animate__backInRight' id='mobileMenu'>
             <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              {/* <select
-                onChange={handleLanguageChangeForMobile}
-                value={selectedLanguage}
-                style={{ boxShadow: 'none', fontSize: '18px', padding: "8px 13px ", backgroundColor: 'rgb(0, 35, 64)', color: '#fff', border: 'none', borderBottom: '2px solid white', outline: 'none' }}>
-                <option value='az'>AZE</option>
-                <option value='ru'>RUS</option>
-                <option selected value='en'>ENG</option>
-              </select> */}
               <div style={{ width: "65%", position: 'relative', zIndex: 9999999 }}>
                 <Select
                   value={options.find((option) => option.value === selectedLanguage)} // Привязываем выбранное значение
@@ -319,7 +315,7 @@ function App() {
             <li><a onClick={() => { setOpen(false) }} href="#first">{t("menuHome")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#about">{t("menuAbout")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#servicesDiv">{t("menuServices")}</a></li>
-            <li><a onClick={() => { setOpen(false) }} href="#servicesDiv">{t("menuReferences")}</a></li>
+            <li><a onClick={() => { setOpen(false) }} href="#references">{t("menuReferences")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#partnersFirst">{t("menuPartners")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#map">{t("addressHead")}</a></li>
           </ul>
@@ -337,7 +333,7 @@ function App() {
           <li><a href="#first">{t("menuHome")}</a></li>
           <li><a href="#about">{t("menuAbout")}</a></li>
           <li><a href="#servicesDiv">{t("menuServices")}</a></li>
-          <li><a onClick={() => { setOpen(false) }} href="#servicesDiv">{t("menuReferences")}</a></li>
+          <li><a onClick={() => { setOpen(false) }} href="#references">{t("menuReferences")}</a></li>
           <li><a href="#partnersFirst">{t("menuPartners")}</a></li>
           <li><a href="#map">{t("addressHead")}</a></li>
           <li>
@@ -385,7 +381,6 @@ function App() {
           </div>
         </Fade >
       </div>
-
       {/* <Zoom> */}
       <div className='wow animate__animated animate__slideInUp' id='about'>
 
@@ -498,6 +493,15 @@ function App() {
           <p>{t("service24")}</p>
 
           <i className="fa-regular fa-circle"></i>
+        </div>
+      </div>
+
+      <div id='references'>
+        <h1 className='wow animate__animated animate__fadeInUp'>{t("menuReferences")}</h1>
+        <div>
+          <img src={ref1} alt="ref1" />
+          <img src={ref2} alt="ref2" />
+          <img src={ref3} alt="ref3" />
         </div>
       </div>
 
