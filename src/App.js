@@ -124,19 +124,20 @@ function App() {
     // Настроим Intersection Observer
     const observer2 = new IntersectionObserver((entries, observer2) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Если элемент видим, добавляем классы для анимации
+        // Проверяем, не выполнена ли уже анимация для этого элемента
+        if (entry.isIntersecting && !entry.target.dataset.animateDone) {
+          // Если элемент видим и анимация ещё не была выполнена, запускаем анимацию
           entry.target.classList.add("animate__animated");
           entry.target.classList.add(entry.target.dataset.animation); // Используем данные атрибута для анимации
-        } else {
-          // Убираем классы анимации, если элемент выходит из видимости
-          entry.target.classList.remove("animate__animated");
-          entry.target.classList.remove(entry.target.dataset.animation);
+    
+          // Отмечаем, что анимация выполнена
+          entry.target.dataset.animateDone = "true";
         }
       });
     }, {
       threshold: 0.5 // Элемент считается видимым, если 50% его содержимого видно на экране
     });
+    
 
     // Отслеживаем каждый элемент
     elements.forEach(element => {
@@ -145,12 +146,13 @@ function App() {
 
     // Убираем observer2 после использования
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current); // Очищаем наблюдатель
-      }
       elements.forEach(element => {
         observer2.unobserve(element);
       });
+
+      if (counterRef.current) {
+        observer.unobserve(counterRef.current); // Очищаем наблюдатель
+      }
     };
 
   }, []);
