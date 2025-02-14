@@ -26,7 +26,7 @@ import slider24 from './photos/slider2/Medsol_logo_0-removebg-preview.png';
 import slider25 from './photos/slider2/stp logo.png';
 import slider26 from './photos/slider2/unico logo.png';
 
-import officePhoto from './photos/officeTest.jpg';
+import officePhoto from './photos/officeBanner.jpeg';
 
 import azeFlag from './photos/flags/aze.png';
 import rusFlag from './photos/flags/rus.png';
@@ -124,19 +124,24 @@ function App() {
     // Настроим Intersection Observer
     const observer2 = new IntersectionObserver((entries, observer2) => {
       entries.forEach(entry => {
-        // Проверяем, не выполнена ли уже анимация для этого элемента
-        if (entry.isIntersecting && !entry.target.dataset.animateDone) {
-          // Если элемент видим и анимация ещё не была выполнена, запускаем анимацию
-          entry.target.classList.add("animate__animated");
-          entry.target.classList.add(entry.target.dataset.animation); // Используем данные атрибута для анимации
-    
-          // Отмечаем, что анимация выполнена
-          entry.target.dataset.animateDone = "true";
+        if (entry.isIntersecting) {
+          // Если элемент становится видимым и анимация ещё не была выполнена
+          if (!entry.target.classList.contains("animate__animated")) {
+            // Добавляем классы для анимации
+            entry.target.classList.add("animate__animated");
+            entry.target.classList.add(entry.target.dataset.animation); // Используем данные атрибута для анимации
+          }
+        } else {
+          // Если элемент выходит из области видимости, убираем классы анимации
+          entry.target.classList.remove("animate__animated");
+          entry.target.classList.remove(entry.target.dataset.animation);
         }
       });
     }, {
       threshold: 0.5 // Элемент считается видимым, если 50% его содержимого видно на экране
     });
+    
+    
     
 
     // Отслеживаем каждый элемент
