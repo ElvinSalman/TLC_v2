@@ -101,29 +101,63 @@ function App() {
 
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(0);
-  const [isInView, setIsInView] = useState(false);
+  // const [isInView, setIsInView] = useState(false);
   const counterRef = useRef(null);
+
+ 
+
+  const countUp = () => {
+    // Обнуляем значения, чтобы счетчики запускались заново
+    setCount(0);
+    setCount2(0);
+
+    // Счетчик для первого числа
+    let target1 = 3000;
+    let interval1 = setInterval(() => {
+      setCount((prev) => {
+        if (prev < target1) {
+          return prev + 10; // увеличить на 10 или на нужное вам значение
+        } else {
+          clearInterval(interval1);
+          return target1;
+        }
+      });
+    }, 10);
+
+    // Счетчик для второго числа
+    let target2 = 10;
+    let interval2 = setInterval(() => {
+      setCount2((prev) => {
+        if (prev < target2) {
+          return prev + 1; // увеличить на 1 или на нужное вам значение
+        } else {
+          clearInterval(interval2);
+          return target2;
+        }
+      });
+    }, 100);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsInView(true); // Когда элемент появляется в видимой области
+            // setIsInView(true); // Когда элемент появляется в видимой области
+            countUp(); // Запускаем счетчики
+          } else {
+            // setIsInView(false); // Когда элемент выходит из области видимости
           }
         });
       },
-      { threshold: 0.5 } // Элемент должен быть на 50% видимым, чтобы запустился процесс
+      { threshold: 0.5 } // Элемент должен быть на 50% видимым
     );
 
     if (counterRef.current) {
       observer.observe(counterRef.current); // Начинаем отслеживать этот элемент
     }
 
-
-
-
-    const elements = document.querySelectorAll(".wow"); // Находим все элементы с классом wow
+        const elements = document.querySelectorAll(".wow"); // Находим все элементы с классом wow
 
     // Настроим Intersection Observer
     const observer2 = new IntersectionObserver((entries, observer2) => {
@@ -164,38 +198,7 @@ function App() {
       }
     };
 
-  }, []);
-
-  useEffect(() => {
-    if (!isInView) return; // Если элемент не в пределах видимости, не начинаем анимацию
-
-    const interval = setInterval(() => {
-      setCount((prevCount) => {
-        if (prevCount < 3000) {
-          return prevCount + 10; // Увеличиваем число
-        } else {
-          clearInterval(interval); // Останавливаем интервал
-          return 3000; // Максимальное значение
-        }
-      });
-    }, 10);
-
-    const interval2 = setInterval(() => {
-      setCount2((prevCount) => {
-        if (prevCount < 10) {
-          return prevCount + 1; // Увеличиваем число
-        } else {
-          clearInterval(interval2); // Останавливаем интервал
-          return 10; // Максимальное значение
-        }
-      });
-    }, 100);
-
-    return () => { clearInterval(interval); clearInterval(interval2); }; // Очистка интервала, когда компонент размонтируется или isInView изменится
-
-
-  }, [isInView]);
-
+  }, []); // Обновление только один раз, после монтирования компонента
 
   const options = [
     { value: 'az', label: 'AZE', image: azeFlag },
