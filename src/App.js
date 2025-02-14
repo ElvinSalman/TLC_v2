@@ -104,7 +104,7 @@ function App() {
   // const [isInView, setIsInView] = useState(false);
   const counterRef = useRef(null);
 
- 
+
 
   const countUp = () => {
     // Обнуляем значения, чтобы счетчики запускались заново
@@ -157,7 +157,7 @@ function App() {
       observer.observe(counterRef.current); // Начинаем отслеживать этот элемент
     }
 
-        const elements = document.querySelectorAll(".wow"); // Находим все элементы с классом wow
+    const elements = document.querySelectorAll(".wow"); // Находим все элементы с классом wow
 
     // Настроим Intersection Observer
     const observer2 = new IntersectionObserver((entries, observer2) => {
@@ -281,7 +281,7 @@ function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalText, setModalText] = useState("");
 
-  
+
 
   const openModal = (serviceId) => {
     let serviceText = "";
