@@ -319,6 +319,7 @@ function App() {
             <li><a onClick={() => { setOpen(false) }} href="#first">{t("menuHome")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#about">{t("menuAbout")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#servicesDiv">{t("menuServices")}</a></li>
+            <li><a onClick={() => { setOpen(false) }} href="#servicesDiv">{t("menuReferences")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#partnersFirst">{t("menuPartners")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#map">{t("addressHead")}</a></li>
           </ul>
@@ -336,6 +337,7 @@ function App() {
           <li><a href="#first">{t("menuHome")}</a></li>
           <li><a href="#about">{t("menuAbout")}</a></li>
           <li><a href="#servicesDiv">{t("menuServices")}</a></li>
+          <li><a onClick={() => { setOpen(false) }} href="#servicesDiv">{t("menuReferences")}</a></li>
           <li><a href="#partnersFirst">{t("menuPartners")}</a></li>
           <li><a href="#map">{t("addressHead")}</a></li>
           <li>

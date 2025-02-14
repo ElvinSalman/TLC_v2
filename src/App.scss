@@ -60,7 +60,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 60%;
+        width: 83%;
 
         li {
             a {
@@ -393,6 +393,10 @@ header {
         }
 
         &:nth-child(3) {
+            background-image: url('./photos/gpsBack.png');
+            background-repeat: no-repeat;
+            background-position: bottom left;
+            background-size: 70%;
             &>i {
                 position: absolute;
                 font-size: 350px;
@@ -871,6 +875,7 @@ footer {
             }
 
             &:nth-child(3) {
+                background-size: 90%;
                 &>i {
                     font-size: 250px;
                     right: -125px;

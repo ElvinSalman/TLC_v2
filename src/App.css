@@ -54,7 +54,7 @@ header ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
+  width: 83%;
 }
 header ul li a {
   text-decoration: none;
@@ -321,6 +321,12 @@ header ul li a:hover {
 }
 #servicesBlocks > div:nth-child(2) p {
   text-align: right;
+}
+#servicesBlocks > div:nth-child(3) {
+  background-image: url("./photos/gpsBack.png");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 70%;
 }
 #servicesBlocks > div:nth-child(3) > i {
   position: absolute;
@@ -693,6 +699,9 @@ footer .fsfooter p {
   }
   #servicesBlocks > div:nth-child(2) p {
     text-align: center;
+  }
+  #servicesBlocks > div:nth-child(3) {
+    background-size: 90%;
   }
   #servicesBlocks > div:nth-child(3) > i {
     font-size: 250px;
