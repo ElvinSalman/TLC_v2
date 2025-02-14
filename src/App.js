@@ -26,7 +26,7 @@ import slider24 from './photos/slider2/Medsol_logo_0-removebg-preview.png';
 import slider25 from './photos/slider2/stp logo.png';
 import slider26 from './photos/slider2/unico logo.png';
 
-import officePhoto from './photos/officeBanner.jpeg';
+import officePhoto from './photos/officebanner.jpg';
 
 import azeFlag from './photos/flags/aze.png';
 import rusFlag from './photos/flags/rus.png';
@@ -320,7 +320,7 @@ function App() {
             <li><a onClick={() => { setOpen(false) }} href="#about">{t("menuAbout")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#servicesDiv">{t("menuServices")}</a></li>
             <li><a onClick={() => { setOpen(false) }} href="#partnersFirst">{t("menuPartners")}</a></li>
-            <li><a onClick={() => { setOpen(false) }} href="#map">{t("menuContact")}</a></li>
+            <li><a onClick={() => { setOpen(false) }} href="#map">{t("addressHead")}</a></li>
           </ul>
         </Slide>
         : <></>}
@@ -337,7 +337,7 @@ function App() {
           <li><a href="#about">{t("menuAbout")}</a></li>
           <li><a href="#servicesDiv">{t("menuServices")}</a></li>
           <li><a href="#partnersFirst">{t("menuPartners")}</a></li>
-          <li><a href="#map">{t("menuContact")}</a></li>
+          <li><a href="#map">{t("addressHead")}</a></li>
           <li>
             {/* <select
               onChange={handleLanguageChange}
@@ -468,7 +468,7 @@ function App() {
         <div>
           <p>{t("service21")}</p>
           <div>
-            <i className="fa-solid fa-earth-americas wow" data-animation="animate__flip"></i>
+            <i className="fa-solid fa-earth-americas wow" data-animation="animate__bounce"></i>
           </div>
 
           <i className="fa-regular fa-circle"></i>
@@ -610,7 +610,7 @@ function App() {
       </div>
 
       <div id='map'>
-        <h1 className='wow animate__animated animate__fadeInUp'>{t("menuContact")}</h1>
+        <h1 className='wow animate__animated animate__fadeInUp'>{t("addressHead")}</h1>
         {/* <div className='wow animate__animated animate__fadeInUp' id='lineInMap'></div> */}
         <div id='elageDiv'>
           <div>
